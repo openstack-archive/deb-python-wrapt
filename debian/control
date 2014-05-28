@@ -1,0 +1,93 @@
+Source: python-wrapt
+Section: python
+Priority: optional
+Maintainer: PKG OpenStack <openstack-devel@lists.alioth.debian.org>
+Uploaders: Julien Danjou <acid@debian.org>,
+           Thomas Goirand <zigo@debian.org>,
+           Mehdi Abaakouk <sileht@sileht.net>,
+           Gonéri Le Bouder <goneri@debian.org>
+Build-Depends: debhelper (>= 9),
+               python-all (>= 2.6.6-3~),
+               python-all-dev (>= 2.6.6-3~),
+               python-setuptools,
+               python3-all,
+               python3-all-dev,
+               python3-setuptools
+Build-Depends-Indep: python-pytest,
+                     python-six,
+                     python-sphinx,
+                     python3-pytest,
+                     python3-six
+Standards-Version: 3.9.5
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-wrapt.git
+Vcs-Git: git://anonscm.debian.org/openstack/python-wrapt.git
+Homepage: https://github.com/GrahamDumpleton/wrapt
+
+Package: python-wrapt
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${misc:Depends}, ${python:Depends}
+Description: decorators, wrappers and monkey patching. - Python 2.x
+ The aim of the wrapt module is to provide a transparent object proxy for
+ Python, which can be used as the basis for the construction of function
+ wrappers and decorator functions.
+ .
+ The wrapt module focuses very much on correctness. It therefore goes way
+ beyond existing mechanisms such as functools.wraps() to ensure that decorators
+ preserve introspectability, signatures, type checking abilities etc. The
+ decorators that can be constructed using this module will work in far more
+ scenarios than typical decorators and provide more predictable and consistent
+ behaviour.
+ .
+ To ensure that the overhead is as minimal as possible, a C extension module is
+ used for performance critical components. An automatic fallback to a pure
+ Python implementation is also provided where a target system does not have a
+ compiler to allow the C extension to be compiled.
+ .
+ This package contains the Python 2.x module.
+
+Package: python3-wrapt
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: decorators, wrappers and monkey patching. - Python 3.x
+ The aim of the wrapt module is to provide a transparent object proxy for
+ Python, which can be used as the basis for the construction of function
+ wrappers and decorator functions.
+ .
+ The wrapt module focuses very much on correctness. It therefore goes way
+ beyond existing mechanisms such as functools.wraps() to ensure that decorators
+ preserve introspectability, signatures, type checking abilities etc. The
+ decorators that can be constructed using this module will work in far more
+ scenarios than typical decorators and provide more predictable and consistent
+ behaviour.
+ .
+ To ensure that the overhead is as minimal as possible, a C extension module is
+ used for performance critical components. An automatic fallback to a pure
+ Python implementation is also provided where a target system does not have a
+ compiler to allow the C extension to be compiled.
+ .
+ This package contains the Python 3.x module.
+
+Package: python-wrapt-doc
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${misc:Depends}, ${sphinxdoc:Depends}
+Description: decorators, wrappers and monkey patching. - doc
+ The aim of the wrapt module is to provide a transparent object proxy for
+ Python, which can be used as the basis for the construction of function
+ wrappers and decorator functions.
+ .
+ The wrapt module focuses very much on correctness. It therefore goes way
+ beyond existing mechanisms such as functools.wraps() to ensure that decorators
+ preserve introspectability, signatures, type checking abilities etc. The
+ decorators that can be constructed using this module will work in far more
+ scenarios than typical decorators and provide more predictable and consistent
+ behaviour.
+ .
+ To ensure that the overhead is as minimal as possible, a C extension module is
+ used for performance critical components. An automatic fallback to a pure
+ Python implementation is also provided where a target system does not have a
+ compiler to allow the C extension to be compiled.
+ .
+ This package contains the documentation.

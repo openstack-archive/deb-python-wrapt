@@ -1,0 +1,3 @@
+do-not-use-the-rdt-sphinx-theme.patch
+do-not-use-embedded-six.py.patch
+no-from-wrapt-import-six-in-tests.patch

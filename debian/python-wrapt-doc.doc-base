@@ -1,0 +1,9 @@
+Document: python-wrapt-doc
+Title: Wrapt Documentation
+Author: OpenStack
+Abstract: Sphinx documentation for Wrapt
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-wrapt-doc/html/index.html
+Files: /usr/share/doc/python-wrapt-doc/html/*
