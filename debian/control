@@ -26,7 +26,7 @@ Homepage: https://github.com/GrahamDumpleton/wrapt
 Package: python-wrapt
 Architecture: any
 Pre-Depends: dpkg (>= 1.15.6~)
-Depends: ${misc:Depends}, ${python:Depends}
+Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends}
 Description: decorators, wrappers and monkey patching. - Python 2.x
  The aim of the wrapt module is to provide a transparent object proxy for
  Python, which can be used as the basis for the construction of function
@@ -49,7 +49,7 @@ Description: decorators, wrappers and monkey patching. - Python 2.x
 Package: python3-wrapt
 Architecture: any
 Pre-Depends: dpkg (>= 1.15.6~)
-Depends: ${misc:Depends}, ${python3:Depends}
+Depends: ${misc:Depends}, ${python3:Depends}, ${shlibs:Depends}
 Description: decorators, wrappers and monkey patching. - Python 3.x
  The aim of the wrapt module is to provide a transparent object proxy for
  Python, which can be used as the basis for the construction of function
