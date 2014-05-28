@@ -1,5 +1,5 @@
 python-wrapt (1.8.0-1) unstable; urgency=low
 
-  * Initial release. (Closes: #XXXXXX)
+  * Initial release. (Closes: #749594)
 
  -- Thomas Goirand <zigo@debian.org>  Wed, 28 May 2014 16:33:31 +0800
