@@ -24,7 +24,7 @@ Vcs-Git: git://anonscm.debian.org/openstack/python-wrapt.git
 Homepage: https://github.com/GrahamDumpleton/wrapt
 
 Package: python-wrapt
-Architecture: all
+Architecture: any
 Pre-Depends: dpkg (>= 1.15.6~)
 Depends: ${misc:Depends}, ${python:Depends}
 Description: decorators, wrappers and monkey patching. - Python 2.x
@@ -47,7 +47,7 @@ Description: decorators, wrappers and monkey patching. - Python 2.x
  This package contains the Python 2.x module.
 
 Package: python3-wrapt
-Architecture: all
+Architecture: any
 Pre-Depends: dpkg (>= 1.15.6~)
 Depends: ${misc:Depends}, ${python3:Depends}
 Description: decorators, wrappers and monkey patching. - Python 3.x
@@ -71,6 +71,7 @@ Description: decorators, wrappers and monkey patching. - Python 3.x
 
 Package: python-wrapt-doc
 Architecture: all
+Section: doc
 Pre-Depends: dpkg (>= 1.15.6~)
 Depends: ${misc:Depends}, ${sphinxdoc:Depends}
 Description: decorators, wrappers and monkey patching. - doc
