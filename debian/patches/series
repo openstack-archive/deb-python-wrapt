@@ -2,3 +2,4 @@ do-not-use-the-rdt-sphinx-theme.patch
 do-not-use-embedded-six.py.patch
 no-from-wrapt-import-six-in-tests.patch
 fix-python-3.4-compat.patch
+python-3.2-compat.patch

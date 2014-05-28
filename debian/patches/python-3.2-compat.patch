@@ -1,0 +1,166 @@
+Description: Fix Python 3.4 compatibility
+Author: Thomas Goirand <zigo@debian.org>
+Forwarded: no
+Last-Update: 2014-05-28
+
+Index: python-wrapt/src/decorators.py
+===================================================================
+--- python-wrapt.orig/src/decorators.py	2014-05-28 22:58:08.000000000 +0800
++++ python-wrapt/src/decorators.py	2014-05-28 22:58:08.000000000 +0800
+@@ -5,12 +5,13 @@
+ 
+ import six
+ 
++import sys
+ from functools import partial
+ from inspect import getargspec, ismethod, isclass
+ from collections import namedtuple
+ from threading import Lock, RLock
+ 
+-if not six.PY2:
++if sys.version_info >= (3, 3):
+     from inspect import signature
+ 
+ from .wrappers import (FunctionWrapper, BoundFunctionWrapper, ObjectProxy,
+@@ -69,7 +70,7 @@
+ 
+     @property
+     def __signature__(self):
+-        if six.PY2:
++        if sys.version_info < (3, 3):
+             return self._self_adapter.__signature__
+         else:
+             # Can't allow this to fail on Python 3 else it falls
+@@ -205,7 +206,7 @@
+                     # we need to first check that use of the decorator
+                     # hadn't been disabled by a simple boolean. If it was,
+                     # the target function to be wrapped is returned instead.
+-                    
++
+                     _enabled = enabled
+                     if type(_enabled) is bool:
+                         if not _enabled:
+Index: python-wrapt/src/importer.py
+===================================================================
+--- python-wrapt.orig/src/importer.py	2014-05-28 22:58:08.000000000 +0800
++++ python-wrapt/src/importer.py	2014-05-28 22:58:08.000000000 +0800
+@@ -8,7 +8,7 @@
+ import sys
+ import threading
+ 
+-if six.PY3: 
++if six.PY3:
+     import importlib
+ 
+ from .decorators import synchronized
+@@ -158,7 +158,7 @@
+         # Now call back into the import system again.
+ 
+         try:
+-            if six.PY3:
++            if sys.version_info >= (3, 3):
+                 # For Python 3 we need to use find_loader() from
+                 # the importlib module. It doesn't actually
+                 # import the target module and only finds the
+Index: python-wrapt/tests/test_adapter.py
+===================================================================
+--- python-wrapt.orig/tests/test_adapter.py	2014-05-28 22:58:08.000000000 +0800
++++ python-wrapt/tests/test_adapter.py	2014-05-28 22:58:08.000000000 +0800
+@@ -3,6 +3,7 @@
+ import unittest
+ import inspect
+ import imp
++import sys
+ 
+ import wrapt
+ 
+@@ -88,7 +89,7 @@
+         # actually needs to match that of the adapter function the
+         # prototype of which was supplied via the dummy function.
+ 
+-        if six.PY2:
++        if sys.version_info < (3, 3):
+             return
+ 
+         def _adapter(arg1, arg2, arg3=None, *args, **kwargs): pass
+Index: python-wrapt/tests/test_adapter_py33.py
+===================================================================
+--- python-wrapt.orig/tests/test_adapter_py33.py	2014-05-28 22:58:08.000000000 +0800
++++ python-wrapt/tests/test_adapter_py33.py	2014-05-28 22:58:08.000000000 +0800
+@@ -3,6 +3,7 @@
+ import unittest
+ import inspect
+ import imp
++import sys
+ 
+ import wrapt
+ 
+@@ -52,7 +53,7 @@
+         # actually needs to match that of the adapter function the
+         # prototype of which was supplied via the dummy function.
+ 
+-        if six.PY2:
++        if sys.version_info < (3, 3):
+             return
+ 
+         def _adapter(arg1, arg2, *, arg3=None, **kwargs): pass
+Index: python-wrapt/tests/test_object_proxy.py
+===================================================================
+--- python-wrapt.orig/tests/test_object_proxy.py	2014-05-28 22:58:08.000000000 +0800
++++ python-wrapt/tests/test_object_proxy.py	2014-05-28 22:58:08.000000000 +0800
+@@ -55,7 +55,7 @@
+         self.assertEqual(function2.__wrapped__, function1)
+         self.assertEqual(function2.__name__, function1.__name__)
+ 
+-        if six.PY3:
++        if sys.version_info >= (3, 3):
+             self.assertEqual(function2.__qualname__, function1.__qualname__)
+ 
+         function2.__wrapped__ = None
+@@ -66,7 +66,7 @@
+         self.assertEqual(function2.__wrapped__, None)
+         self.assertFalse(hasattr(function2, '__name__'))
+ 
+-        if six.PY3:
++        if sys.version_info >= (3, 3):
+             self.assertFalse(hasattr(function2, '__qualname__'))
+ 
+         def function3(*args, **kwargs):
+@@ -78,7 +78,7 @@
+         self.assertEqual(function2.__wrapped__, function3)
+         self.assertEqual(function2.__name__, function3.__name__)
+ 
+-        if six.PY3:
++        if sys.version_info >= (3, 3):
+             self.assertEqual(function2.__qualname__, function3.__qualname__)
+ 
+     def test_delete_wrapped(self):
+Index: python-wrapt/tests/test_update_attributes.py
+===================================================================
+--- python-wrapt.orig/tests/test_update_attributes.py	2014-05-28 22:58:08.000000000 +0800
++++ python-wrapt/tests/test_update_attributes.py	2014-05-28 22:58:08.000000000 +0800
+@@ -1,5 +1,6 @@
+ from __future__ import print_function
+ 
++import sys
+ import unittest
+ 
+ import wrapt
+@@ -45,7 +46,7 @@
+         def function():
+             pass
+ 
+-        if six.PY3:
++        if sys.version_info >= (3, 3):
+             method = self.test_update_qualname
+             self.assertEqual(function.__qualname__,
+                     (method.__qualname__ + '.<locals>.function'))
+@@ -63,7 +64,7 @@
+ 
+         instance = wrapt.FunctionWrapper(function, wrapper)
+ 
+-        if six.PY3:
++        if sys.version_info >= (3, 3):
+             method = self.test_update_qualname_modified_on_original
+             self.assertEqual(instance.__qualname__,
+                     (method.__qualname__ + '.<locals>.function'))
