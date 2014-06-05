@@ -1,3 +1,10 @@
+python-wrapt (1.8.0-2) unstable; urgency=medium
+
+  * Moves python-sphinx to build-depends instead of build-depends-indep.
+    (Closes: #750579).
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 05 Jun 2014 06:35:41 +0000
+
 python-wrapt (1.8.0-1) unstable; urgency=low
 
   * Initial release. (Closes: #749594)
