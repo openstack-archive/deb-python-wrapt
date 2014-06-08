@@ -1,3 +1,10 @@
+python-wrapt (1.8.0-4) unstable; urgency=medium
+
+  * wrapt is of arch "any" and not "all", therefore all the build-depends-indep
+    should be in build-depends. This upload fixes that.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 08 Jun 2014 23:34:47 +0800
+
 python-wrapt (1.8.0-3) unstable; urgency=medium
 
   * Added missing depends on python-six / python3-six (Closes: #750579).
