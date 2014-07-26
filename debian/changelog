@@ -1,3 +1,10 @@
+python-wrapt (1.8.0-5) unstable; urgency=medium
+
+  * Added do-not-run-test_proxy_attribute.patch to avoid FTBFS. Thanks to David
+    Suárez <david.sephirot@gmail.com> for the bug report (Closes: #755325).
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 26 Jul 2014 07:37:40 +0000
+
 python-wrapt (1.8.0-4) unstable; urgency=medium
 
   * wrapt is of arch "any" and not "all", therefore all the build-depends-indep
