@@ -5,6 +5,7 @@ python-wrapt (1.9.0-1) unstable; urgency=medium
       no-from-wrapt-import-six-in-tests.patch, as src/six.py is gone upstream.
     - Drop fix-python-3.4-compat.patch applied upstream.
     - Drop python-3.2-compat.patch as upstream isn't using embeddded six.
+  * Standards-Version is now 3.9.6 (no change).
 
  -- Thomas Goirand <zigo@debian.org>  Tue, 14 Oct 2014 00:01:48 +0800
 
