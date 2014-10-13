@@ -4,6 +4,7 @@ python-wrapt (1.9.0-1) unstable; urgency=medium
     - Drop do-not-use-embedded-six.py.patch and
       no-from-wrapt-import-six-in-tests.patch, as src/six.py is gone upstream.
     - Drop fix-python-3.4-compat.patch applied upstream.
+    - Drop python-3.2-compat.patch as upstream isn't using embeddded six.
 
  -- Thomas Goirand <zigo@debian.org>  Tue, 14 Oct 2014 00:01:48 +0800
 
