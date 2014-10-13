@@ -1,3 +1,9 @@
+python-wrapt (1.9.0-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #765064).
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 14 Oct 2014 00:01:48 +0800
+
 python-wrapt (1.8.0-5) unstable; urgency=medium
 
   * Added do-not-run-test_proxy_attribute.patch to avoid FTBFS. Thanks to David
