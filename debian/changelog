@@ -1,6 +1,8 @@
 python-wrapt (1.9.0-1) unstable; urgency=medium
 
-  * New upstream release (Closes: #765064).
+  * New upstream release (Closes: #765064):
+    - Drop do-not-use-embedded-six.py.patch and
+      no-from-wrapt-import-six-in-tests.patch, as src/six.py is gone upstream.
 
  -- Thomas Goirand <zigo@debian.org>  Tue, 14 Oct 2014 00:01:48 +0800
 
