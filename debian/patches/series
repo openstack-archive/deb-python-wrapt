@@ -1,4 +1,3 @@
 do-not-use-the-rdt-sphinx-theme.patch
-fix-python-3.4-compat.patch
 python-3.2-compat.patch
 do-not-run-test_proxy_attribute.patch
