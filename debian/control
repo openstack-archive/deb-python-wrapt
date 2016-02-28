@@ -19,8 +19,8 @@ Build-Depends: debhelper (>= 9),
                python3-setuptools,
                python3-six
 Standards-Version: 3.9.6
-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-wrapt.git
-Vcs-Git: git://anonscm.debian.org/openstack/python-wrapt.git
+Vcs-Browser: https://anonscm.debian.org/cgit/openstack/python-wrapt.git/
+Vcs-Git: https://anonscm.debian.org/git/openstack/python-wrapt.git
 Homepage: https://github.com/GrahamDumpleton/wrapt
 
 Package: python-wrapt
