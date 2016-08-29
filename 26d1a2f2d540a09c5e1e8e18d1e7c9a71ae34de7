@@ -1,0 +1,8 @@
+Code-Review+2: Thomas Goirand <thomas@goirand.fr>
+Workflow+1: Thomas Goirand <thomas@goirand.fr>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 29 Aug 2016 16:09:49 +0000
+Reviewed-on: https://review.openstack.org/362197
+Project: openstack/deb-python-wrapt
+Branch: refs/heads/debian/newton
