@@ -1,1 +1,2 @@
 extend-diff-ignore = "^[^/]*[.]egg-info/"
+extend-diff-ignore = "^[.]gitreview$"
