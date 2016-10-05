@@ -1,29 +1,21 @@
 #!/usr/bin/make -f
 
-PYTHONS:=$(shell pyversions -vr)
-PYTHON3S:=$(shell py3versions -vr)
-
 UPSTREAM_GIT := https://github.com/GrahamDumpleton/wrapt.git
--include /usr/share/openstack-pkg-tools/pkgos.make
+include /usr/share/openstack-pkg-tools/pkgos.make
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow
 
 %:
 	dh $@ --buildsystem=python_distutils --with python2,python3,sphinxdoc
 
-override_dh_install:
-	set -e && for pyvers in $(PYTHONS); do \
-		python$$pyvers setup.py install --install-layout=deb \
-			--root $(CURDIR)/debian/python-wrapt; \
-	done
-	set -e && for pyvers in $(PYTHON3S); do \
-		python$$pyvers setup.py install --install-layout=deb \
-			--root $(CURDIR)/debian/python3-wrapt; \
-	done
+override_dh_auto_install:
+	pkgos-dh_auto_install
 
 override_dh_auto_test:
 ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
 	ln -s src wrapt
 	set -ex && for pyvers in $(PYTHONS) $(PYTHON3S); do \
-		PYTHONPATH=. py.test-$$pyvers -v tests ; \
+		PYTHONPATH=. python$$pyvers -m pytest -v tests ; \
 	done
 	rm -f wrapt
 endif

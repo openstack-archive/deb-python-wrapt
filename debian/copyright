@@ -2,6 +2,10 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: wrapt
 Source: https://github.com/GrahamDumpleton/wrapt
 
+Files: *
+Copyright: (c) 2013, Graham Dumpleton <Graham.Dumpleton@gmail.com>
+License: BSD-2-clause
+
 Files: debian/*
 Copyright: (c) 2014, Thomas Goirand <zigo@debian.org>
 License: BSD-2-clause
@@ -9,10 +13,6 @@ License: BSD-2-clause
 Files: src/arguments.py
 Copyright: Guido van Rossum <guido@cwi.nl> and others.
 License: PSF-License
-
-Files: *
-Copyright: (c) 2013, Graham Dumpleton <Graham.Dumpleton@gmail.com>
-License: BSD-2-clause
 
 License: BSD-2-clause
  Redistribution and use in source and binary forms, with or without

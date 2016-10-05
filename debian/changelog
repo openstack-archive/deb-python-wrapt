@@ -1,22 +1,48 @@
-python-wrapt (1.9.0-2) unstable; urgency=medium
+python-wrapt (1.9.0-3) unstable; urgency=medium
 
+  [ Ondřej Nový ]
   * Fixed VCS URLs (https).
   * d/rules: Changed UPSTREAM_GIT protocol to https
   * d/s/options: extend-diff-ignore of .gitreview
   * d/control: Using OpenStack's Gerrit as VCS URLs.
 
- -- Ondřej Nový <novy@ondrej.org>  Sun, 28 Feb 2016 15:53:01 +0100
+  [ Thomas Goirand ]
+  * Using python -m pytest instead of py.test-VERSION.
+  * Using pkgos-dh_auto_install from openstack-pkg-tools >= 52~.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 05 Oct 2016 16:24:58 +0200
+
+python-wrapt (1.9.0-2) unstable; urgency=medium
+
+  * Repair the mistake of build-depends-indep: the binaries are *not*
+    arch: all.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 09 Sep 2016 13:22:18 +0000
 
 python-wrapt (1.9.0-1) unstable; urgency=medium
 
+  [ Ondřej Nový ]
+  * Fixed VCS URLs (https).
+  * d/rules: Changed UPSTREAM_GIT protocol to https
+
+  [ Thomas Goirand ]
   * New upstream release (Closes: #765064):
     - Drop do-not-use-embedded-six.py.patch and
       no-from-wrapt-import-six-in-tests.patch, as src/six.py is gone upstream.
     - Drop fix-python-3.4-compat.patch applied upstream.
-    - Drop python-3.2-compat.patch as upstream isn't using embeddded six.
+    - Drop python-3.2-compat.patch as upstream isn't using embedded six.
   * Standards-Version is now 3.9.6 (no change).
+  * Removed non-active maintainers.
+  * Reviewed (build-)depends and ran wrap-and-sort -t -a.
+  * Simplified debian/rules using goodies from openstack-pkg-tools >= 52~.
+  * Using python$$pyvers -m pytest to run tests (Closes: #835247).
+  * Fixed debian/copyright ordering.
+  * Standards-Version: 3.9.8 (no change).
+  * Added export DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow.
+  * Removed do-not-use-the-rdt-sphinx-theme.patch and build-depends on the
+    python-sphinx-rtd-theme package.
 
- -- Thomas Goirand <zigo@debian.org>  Tue, 14 Oct 2014 00:01:48 +0800
+ -- Thomas Goirand <zigo@debian.org>  Fri, 09 Sep 2016 08:05:11 +0000
 
 python-wrapt (1.8.0-5) unstable; urgency=medium
 
