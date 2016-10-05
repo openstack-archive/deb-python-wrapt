@@ -7,8 +7,10 @@ Uploaders: Julien Danjou <acid@debian.org>,
            Mehdi Abaakouk <sileht@sileht.net>,
            Gonéri Le Bouder <goneri@debian.org>
 Build-Depends: debhelper (>= 9),
-               python-all (>= 2.6.6-3~),
-               python-all-dev (>= 2.6.6-3~),
+               dh-python,
+               openstack-pkg-tools (>= 52~),
+               python-all,
+               python-all-dev,
                python-pytest,
                python-setuptools,
                python-six,
@@ -25,7 +27,6 @@ Homepage: https://github.com/GrahamDumpleton/wrapt
 
 Package: python-wrapt
 Architecture: any
-Pre-Depends: dpkg (>= 1.15.6~)
 Depends: python-six, ${misc:Depends}, ${python:Depends}, ${shlibs:Depends}
 Description: decorators, wrappers and monkey patching. - Python 2.x
  The aim of the wrapt module is to provide a transparent object proxy for
@@ -48,7 +49,6 @@ Description: decorators, wrappers and monkey patching. - Python 2.x
 
 Package: python3-wrapt
 Architecture: any
-Pre-Depends: dpkg (>= 1.15.6~)
 Depends: python3-six, ${misc:Depends}, ${python3:Depends}, ${shlibs:Depends}
 Description: decorators, wrappers and monkey patching. - Python 3.x
  The aim of the wrapt module is to provide a transparent object proxy for
@@ -72,7 +72,6 @@ Description: decorators, wrappers and monkey patching. - Python 3.x
 Package: python-wrapt-doc
 Architecture: all
 Section: doc
-Pre-Depends: dpkg (>= 1.15.6~)
 Depends: ${misc:Depends}, ${sphinxdoc:Depends}
 Description: decorators, wrappers and monkey patching. - doc
  The aim of the wrapt module is to provide a transparent object proxy for

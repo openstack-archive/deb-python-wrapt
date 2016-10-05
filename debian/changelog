@@ -1,11 +1,16 @@
 python-wrapt (1.9.0-2) unstable; urgency=medium
 
+  [ Ondřej Nový ]
   * Fixed VCS URLs (https).
   * d/rules: Changed UPSTREAM_GIT protocol to https
   * d/s/options: extend-diff-ignore of .gitreview
   * d/control: Using OpenStack's Gerrit as VCS URLs.
 
- -- Ondřej Nový <novy@ondrej.org>  Sun, 28 Feb 2016 15:53:01 +0100
+  [ Thomas Goirand ]
+  * Using python -m pytest instead of py.test-VERSION.
+  * Using pkgos-dh_auto_install from openstack-pkg-tools >= 52~.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 05 Oct 2016 16:24:58 +0200
 
 python-wrapt (1.9.0-1) unstable; urgency=medium
 
