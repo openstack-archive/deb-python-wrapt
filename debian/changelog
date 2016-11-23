@@ -1,3 +1,9 @@
+python-wrapt (1.9.0-4) UNRELEASED; urgency=medium
+
+  * Bumped debhelper compat version to 10
+
+ -- Ondřej Nový <onovy@debian.org>  Thu, 24 Nov 2016 00:12:31 +0100
+
 python-wrapt (1.9.0-3) unstable; urgency=medium
 
   [ Ondřej Nový ]

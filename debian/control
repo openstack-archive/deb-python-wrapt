@@ -3,7 +3,7 @@ Section: python
 Priority: optional
 Maintainer: PKG OpenStack <openstack-devel@lists.alioth.debian.org>
 Uploaders: Thomas Goirand <zigo@debian.org>,
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 10),
                dh-python,
                openstack-pkg-tools (>= 52~),
                python-all,
